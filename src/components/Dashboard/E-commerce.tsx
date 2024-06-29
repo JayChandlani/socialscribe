@@ -46,7 +46,9 @@ const ECommerce: React.FC = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ prompt: `provide brand stratigy where brand name is ${formData.question_a} and the type of product they sell is ${formData.question_b} and the target audiances are ${formData.question_c}` }),
-    }).then(res => { console.log("res", res); return res.json(); }).then(res => { console.log("res2", res); setResponse(res.result); setLoading(false) });
+    })
+    .then(res => { console.log("res", res); return res.json(); })
+    .then(res => { console.log("res2", res); setResponse(res.result); setLoading(false) });
     setFormData({});
 
   };
